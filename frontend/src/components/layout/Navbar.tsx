@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import logo from "../../images/Ssc.png";
 import { t } from "i18next";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { i18n } = useTranslation();
@@ -55,9 +56,9 @@ const Navbar = () => {
           {t("AboutUs")}
           </a>
 
-          <a href="/OurRules" className="text-gray-900 dark:text-white hover:text-blue-500">
+          <Link to="/rules" className="text-gray-900 dark:text-white hover:text-blue-500">
             {t("Rules")}
-          </a>
+          </Link>
           <a href="#contact" className="text-gray-900 dark:text-white hover:text-blue-500">
           {t("Contact")}
           </a>

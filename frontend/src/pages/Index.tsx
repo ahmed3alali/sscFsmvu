@@ -89,7 +89,7 @@ const Index = () => {
               {t("supportSub_second")}
               </p>
               <div className="pt-4">
-                <a href='/faaliyet'>
+                <Link to='/faaliyet'>
                   <Button 
                     className="rounded-full px-8"
                   >
@@ -97,7 +97,7 @@ const Index = () => {
                     {t("Faaliyet")}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                  </a>
+                  </Link>
               </div>
             </div>
             <div className="relative h-[500px] animate-slideUp" style={{ animationDelay: '200ms' }}>
