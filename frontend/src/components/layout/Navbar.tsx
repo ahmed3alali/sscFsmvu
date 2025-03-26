@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import logo from "../../images/Ssc.png";
+import { t } from "i18next";
 
 const Navbar = () => {
   const { i18n } = useTranslation();
@@ -40,17 +41,20 @@ const Navbar = () => {
 
         {/* Desktop Navigation Buttons */}
         <div className="hidden md:flex space-x-4">
-          <a href="/" className="text-gray-900 dark:text-white hover:text-blue-500">
-            Home
+          <a href="/" className="text-gray-900 dark:text-white hover:text-blue-500 ">
+          <div className="homeBtn rtl:ml-4">
+          {t("Home")}
+          </div>
+           
           </a>
-          <a href="/about" className="text-gray-900 dark:text-white hover:text-blue-500">
-            About Us
+          <a href="#team" className="text-gray-900 dark:text-white hover:text-blue-500">
+            {t("Team")}
           </a>
-          <a href="/services" className="text-gray-900 dark:text-white hover:text-blue-500">
-            Services
+          <a href="/aboutUs" className="text-gray-900 dark:text-white hover:text-blue-500">
+          {t("AboutUs")}
           </a>
-          <a href="/contact" className="text-gray-900 dark:text-white hover:text-blue-500">
-            Contact
+          <a href="#contact" className="text-gray-900 dark:text-white hover:text-blue-500">
+          {t("Contact")}
           </a>
         </div>
 

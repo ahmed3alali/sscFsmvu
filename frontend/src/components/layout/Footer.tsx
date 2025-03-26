@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, MapPin, Phone, Mail } from 'lucide-react';
 import logo from "../../images/Ssc.png"
+import { t } from 'i18next';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
@@ -16,7 +17,7 @@ const Footer = () => {
              <img src={logo}></img>
             </div>
             <p className="text-muted-foreground max-w-md">
-              A community of Syrian students at FSM University, providing support, events, and opportunities for collaboration.
+            {t("supportSub")}
             </p>
             <div className="flex space-x-4">
             
@@ -27,42 +28,24 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Quick Links</h3>
-            <div className="grid grid-cols-1 gap-2">
-              <Link to="/" className="text-foreground/60 hover:text-primary transition-colors">
-                Home
-              </Link>
-              <Link to="/rules" className="text-foreground/60 hover:text-primary transition-colors">
-                Rules
-              </Link>
-            
-              <Link to="/partners" className="text-foreground/60 hover:text-primary transition-colors">
-                Partners
-              </Link>
-              <Link to="/login" className="text-foreground/60 hover:text-primary transition-colors">
-                Join Us
-              </Link>
-            </div>
-          </div>
+        
 
           {/* Contact */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg">Contact</h3>
+            <h3 className="font-semibold text-lg">{t("ContactUs")}</h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-3 text-foreground/60">
                 <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
-                <span>FSM University Campus, Student Activities Building, Room 204</span>
+                <span>{t("UniversityPlace")}</span>
               </div>
               <div className="flex items-center space-x-3 text-foreground/60">
-                <Phone className="h-5 w-5 flex-shrink-0" />
-                <span>+216 123 456 789</span>
+                <Phone className="phoneNumber h-5 w-5 flex-shrink-0" />
+                <span>{t("PhoneContact")}</span>
               </div>
               <div className="flex items-center space-x-3 text-foreground/60">
                 <Mail className="h-5 w-5 flex-shrink-0" />
-                <a href="mailto:contact@syrianstudentsclub.com" className="hover:text-primary transition-colors">
-                  contact@syrianstudentsclub.com
+                <a href="Sscfsmvu@gmail.com" className="hover:text-primary transition-colors">
+                Sscfsmvu@gmail.com
                 </a>
               </div>
             </div>

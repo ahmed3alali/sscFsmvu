@@ -27,10 +27,11 @@ const resources = {
       ActiveMembers:"Active Members",
       Mamdouh:"Mamdouh Al Masri",
       President:"President",
-      Diaa: "Diaa",
+      Diaa: "Diaa Azraq",
       VicePresident:"Vice Presedent",
-      Shahid: "Shahid Akbazi",
-      Media: "Media",
+      Shahid: "Shahid Akbazli",
+      Media: "Media Manager ",
+
 OurTeam: "Our Team",
 
 TeamsHeader: "Meet the dedicated individuals who lead our student club",
@@ -50,7 +51,10 @@ NoorJob: "Relations Management",
 HoraniJob: "Secretariat",
 Rules:" Club Rules & Policies",
 SubRulesHeader:"    Guidelines to ensure a positive and productive environment for all members",
-
+Home: "Home",
+AboutUs:" About Us", 
+Contact: "Contact Us",
+Team:"Our Team",
 
 
 
@@ -59,11 +63,11 @@ SubRulesHeader:"    Guidelines to ensure a positive and productive environment f
   },
   ar: {
     translation: {
-      caroselHeader: "نادي تجمع الطلبة السوريين",
+      caroselHeader: " تجمع الطلبة السوريين",
       caroselSubHeader: "بناء المجتمع، خلق الفرص، والحفاظ على التراث الثقافي للطلاب السوريين في جامعة FSM.",
       supportSYRheader :"دعمنا للطلاب السوريين في جامعتنا",
-      supportSub: "نادي الطلاب السوريين في جامعة FSM هو بمثابة وطن ثانٍ للطلاب السوريين، حيث يوفر الدعم الأكاديمي، وينظم الفعاليات الثقافية، ويوفر فرصًا للتواصل والتطوير."
- ,supportSub_second:"تتمثل رسالتنا في تعزيز روح المجتمع، ونشر الوعي الثقافي، ومساعدة الطلاب على تحقيق النجاح الأكاديمي والمهني."
+      supportSub: "هيئة طلابية منتخبة في جامعة السلطان محمد الفاتح ، تمثل المجتمع الطلابي السوري في الجامعة. نحمل مبادئ ديننا الإسلامي وثورة الحرية الكرامة"
+ ,supportSub_second:"نعمل على تمكين الطالب السوري كي يكون داعما لوطنه"
  
  ,joinUsBtn:"انضم لنا ",
  OurPartnersBtn:"الشركاء",
@@ -94,7 +98,7 @@ UniversityPlace:" جامعة السلطان محمد الفاتح - حرم تو�
 PhoneHeader:"الهاتف",
 PhoneContact:"+90 535 732 09 83",
 OfficeHours:"ساعات الدوام ",
-DaysAvaliable:"الاثنين - الجمعة 9 صباحا حتى 5 مساء",
+DaysAvaliable:"طيلة أيام الأسبوع 9 صباحا حتى 5 مساء",
 OurEmailContact:"البريد الالكتروني",
 SendUsMessageBtn:"ارسل رسالة ",
 Nooridin:"نور الدين أبو زيد",
@@ -103,7 +107,11 @@ Horani:"محمد حواراني",
 HoraniJob: "أمانة السر",
 Rules:" النظام الداخلي",
 SubRulesHeader:"تعرف على اساسات نظامنا الداخلي",
-AboutUs:""
+Home: "الرئيسية",
+AboutUs:" من نحن", 
+Contact: "تواصل معنا",
+Team:"الفريق",
+
 
 
 

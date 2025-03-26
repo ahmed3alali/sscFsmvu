@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 const ContactSection: React.FC = () => {
   const {t} = useTranslation()
   return (
-    <section className="section bg-secondary">
+    <section className="section bg-secondary" id='contact'>
       <div className="page-container">
         <h2 className="section-title">{t("ContactUs")}</h2>
         <p className="section-subtitle">

@@ -25,7 +25,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
 }) => {
   return (
     <div 
-      className="flex flex-col items-center text-center animate-slideUp"
+      className="flex flex-col items-center text-center animate-slideUp" id='team'
       style={{ animationDelay: `${delay}ms` }}
     >
       <div className="relative mb-6">

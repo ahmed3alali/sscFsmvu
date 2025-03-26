@@ -86,14 +86,14 @@ const Index = () => {
               {t("supportSub_second")}
               </p>
               <div className="pt-4">
-                <Link to="/team">
+                <a href='#team'>
                   <Button 
                     className="rounded-full px-8"
                   >
                     {t("MeetTeamBtn")}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </Link>
+                  </a>
               </div>
             </div>
             <div className="relative h-[500px] animate-slideUp" style={{ animationDelay: '200ms' }}>

@@ -91,20 +91,20 @@ const CounterSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 ">
           <CounterItem 
             icon={<Calendar className="h-10 w-10  " />} 
-            value={20} 
+            value={30} 
             label={t("ProgramsMade")}
             delay={0}
           />
         
           <CounterItem 
             icon={<Handshake className="h-10 w-10" />} 
-            value={3} 
+            value={4} 
             label={t("PartnerShips")} 
             delay={400}
           />
           <CounterItem 
             icon={<Users className="h-10 w-10" />} 
-            value={50} 
+            value={100} 
             label={t("ActiveMembers")} 
             delay={600}
           />
