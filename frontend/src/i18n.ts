@@ -79,7 +79,7 @@ SubRulesHeader:"    Guidelines to ensure a positive and productive environment f
    President:"رئيس التجمع",
    Diaa: "ضياء أزرق",
    VicePresident:"نائبة الرئيس",
-   Shahid: "شهد أكبازي",
+   Shahid: "شهد أكبازلي",
    Media: "الإعلام",
 OurTeam: "فريقنا",
 
@@ -117,12 +117,16 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: "ar", // Default language
-    fallbackLng: "ar",
+    lng: localStorage.getItem('i18nextLng') || 'ar',  // Load language from localStorage
+    fallbackLng: 'ar',
     interpolation: {
       escapeValue: false,
     },
+    react: {
+      useSuspense: false,  // Don't block rendering while waiting for language change
+    },
   });
+
 
 // Function to update text direction
 const updateDirection = (lng: string) => {
