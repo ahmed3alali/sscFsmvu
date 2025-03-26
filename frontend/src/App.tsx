@@ -13,6 +13,8 @@ import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import "./i18n.ts"
 import './index.css'
+import OurRules from "./pages/OurRules.tsx";
+import Faaliyetler from "./pages/Faaliyetler.tsx";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -27,6 +29,8 @@ const App = () => (
             <Route path="/rules" element={<Rules />} />
             <Route path="/team" element={<Team />} />
             <Route path="/partners" element={<Partners />} />
+            <Route path="/OurRules" element={<OurRules />} />
+            <Route path="/faaliyet" element={<Faaliyetler/>} />
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

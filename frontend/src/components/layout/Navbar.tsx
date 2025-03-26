@@ -50,8 +50,13 @@ const Navbar = () => {
           <a href="#team" className="text-gray-900 dark:text-white hover:text-blue-500">
             {t("Team")}
           </a>
-          <a href="/aboutUs" className="text-gray-900 dark:text-white hover:text-blue-500">
+          
+          <a href="#aboutUs" className="text-gray-900 dark:text-white hover:text-blue-500">
           {t("AboutUs")}
+          </a>
+
+          <a href="/OurRules" className="text-gray-900 dark:text-white hover:text-blue-500">
+            {t("Rules")}
           </a>
           <a href="#contact" className="text-gray-900 dark:text-white hover:text-blue-500">
           {t("Contact")}

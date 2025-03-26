@@ -84,8 +84,10 @@ const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            <Button className="mt-6 w-full sm:w-auto rounded-full px-8 py-6 text-base">
-            {t("SendUsMessageBtn")}
+            <Button className="mt-6 w-full sm:w-auto rounded-full px-8 py-6 text-base " >
+            <a href="mailto:example@example.com" className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+  📧 {t("Contact")}
+</a>
             </Button>
           </div>
         </div>

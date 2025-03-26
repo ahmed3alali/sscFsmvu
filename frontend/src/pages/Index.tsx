@@ -22,7 +22,7 @@ const Index = () => {
     fsmBasic,
     fsm1
    
-  ];
+  ];  
 
   useEffect(() => {
     // Scroll to top on page load
@@ -50,7 +50,10 @@ const Index = () => {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" className="rounded-full px-8 bg-red-600">
-                {t("joinUsBtn")}
+                  <a href='https://forms.gle/XkxSPeSHwPW5C4QA8'>
+                  {t("joinUsBtn")}
+                  </a>
+               
                 </Button>
                 <Link to="/partners">
                   <Button 
@@ -69,7 +72,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="section">
+      <section className="section" id='aboutUs'>
         <div className="page-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-slideUp">
@@ -86,11 +89,12 @@ const Index = () => {
               {t("supportSub_second")}
               </p>
               <div className="pt-4">
-                <a href='#team'>
+                <a href='/faaliyet'>
                   <Button 
                     className="rounded-full px-8"
                   >
-                    {t("MeetTeamBtn")}
+                    
+                    {t("Faaliyet")}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                   </a>

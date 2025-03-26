@@ -55,6 +55,7 @@ Home: "Home",
 AboutUs:" About Us", 
 Contact: "Contact Us",
 Team:"Our Team",
+Faaliyet : "Activites"
 
 
 
@@ -112,7 +113,7 @@ AboutUs:" من نحن",
 Contact: "تواصل معنا",
 Team:"الفريق",
 
-
+Faaliyet :"الفعاليات"
 
 
 
