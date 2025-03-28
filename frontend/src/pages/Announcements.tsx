@@ -18,7 +18,7 @@ export const Announcements: React.FC = () => {
   const [loading, setLoading] = useState(true); // ✅ Add loading state
 
   useEffect(() => {
-    axios.get("http://localhost:4000/api/v1/announcements")
+    axios.get("https://ssc-fsmvu-backend.vercel.app/api/v1/announcements")
       .then((response) => {
         console.log(response.data);
         setAnnouncements(response.data);
