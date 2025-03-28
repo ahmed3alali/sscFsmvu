@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { t } from 'i18next';
 import takween from "../images/takween.png"
-import ssu from "../images/ssu.jpeg"
+import itihad from "../images/syrianItihad.png"
 import tibyan from "../images/tibyan.png"
 interface PartnerCardProps {
   name: string;
@@ -70,9 +70,9 @@ const Partners = () => {
   const partners = [
     {
       name: (t("SyrianGeneralItihad")),
-      logo: ssu,
+      logo: itihad,
       description: (t("itihadExplination")),
-      website: "https://ssunion.org"
+      website: "https://www.instagram.com/guofsyrians?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
     },
     {
       name: (t("Tibyan")),
