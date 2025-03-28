@@ -10,6 +10,9 @@ const resources = {
       joinUsBtn:"Join Us",
       OurPartnersBtn:"Our Partners",
 
+      SyrianGeneralItihad:"United Syrian Community",
+      Tibyan: "Tibyan",
+      Takween: "Takween Publishing House",
       
       
       supportSYRheader:"Supporting Syrian Students at FSM University",
@@ -31,6 +34,8 @@ const resources = {
       VicePresident:"Vice Presedent",
       Shahid: "Shahid Akbazli",
       Media: "Media Manager ",
+      Login:"Login",
+
 
 OurTeam: "Our Team",
 
@@ -55,12 +60,37 @@ Home: "Home",
 AboutUs:" About Us", 
 Contact: "Contact Us",
 Team:"Our Team",
-Faaliyet : "Activites"
+Faaliyet : "Activites",
+itihadExplination: "An independent, non-profit student union organization that represents Syrian students around the world. It is concerned with the current issues of Syrian students and their future, and works to prepare an educated Syrian generation for the transition to a modern national state.",
+
+WhoIsTibyan:"Providing religious activities in a distinctive manner that suits young people and their interests, focusing on the Holy Quran through memorization, recitation, and contemplation, providing youth programs that target the intellectual aspect, providing a conservative incubator within the university environment, and providing support for youth activities."
+,wantToBePartner : "Interested in partnering with the Syrian Students Club? We're always looking for organizations and businesses to collaborate with on events, initiatives, and opportunities for our members. "
+,BecomeAPartner: "Become A Partner" ,
+Announcements:"Announcements"  ,
+Email:"Email",
+Password:"Password",
+ForgotPassword:"Forgot Password?",
+EnterYourEmail:"Enter your email",
+EnterYourPassword:"Enter your password",
+BackHome:"Back Home",
+LoggingIn:  "Logging in, Please Wait",
+Welcome:"Welcome",
+AddAnnouncement:"Post Announcement",
+AnouncementTitle:"Announcement Title",
+AnouncementExp:"Announcement Explination",
+NoFile:"No file selected",
 
 
-
-
-    },
+WebsiteSettings:"Website settings",
+ManageAnouncements:"Manage Announcements",
+NoAnnouncementsAv:"No announcements Avaliable",
+Logout:"Logout",
+AnnouncementAdded:"Announcement Posted ! ",
+TakweenExp:"Takween Printing Press offers a special 10% discount to the Syrian Students Club at FSM on all publications until the end of the year."
+,VisitWebsite:"Visit Website"
+,Insta:"@SSC.FSMVU",
+DeleteAnnouncement:"Delete Announcement"
+},
   },
   ar: {
     translation: {
@@ -88,7 +118,7 @@ Faaliyet : "Activites"
    Media: "الإعلام",
 OurTeam: "فريقنا",
 
-TeamsHeader: "تعرف على الأفراد المخلصين الذين يقودون نادي الطلاب لدينا.",
+TeamsHeader: "تعرف على اعضاء مجلس الإدارة",
 
 
 
@@ -113,10 +143,41 @@ AboutUs:" من نحن",
 Contact: "تواصل معنا",
 Team:"الفريق",
 
-Faaliyet :"الفعاليات"
+Faaliyet :"الفعاليات",
+Takween : "مطبعة تكويين",
+Tibyan :"مبادرة تبيان", 
+TakweenExp:"تقدم مطبعة تكوين خصم خاص بقيمة 10% لاتحاد الطلبة السوريين في  جامعة محمد الفاتح على جميع المطبوعات لنهاية العام ",
+SyrianGeneralItihad: "الاتحاد العام لطلبة سوريا",
+itihadExplination:"مؤسسة نقابية طلابية مستقلة غير ربحية، تمثل الطلبة السوريين حول العالم، وتهتم بقضايا الطلاب السوريين الراهنة وبمستقبلهم، وتعمل على تأهيل جيل سوري مثقف، لأجل الانتقال إلى الدولة الوطنية الحديثة.",
+WhoIsTibyan:"تقديم الأنشطة الدينية بطريقة مميزة تناسب الشباب وتوجهاتهم, العناية بالقرآن الكريم حفظاً وتلاوة وتدبراً – تقديم برامج شبابية تستهدف الجانب الفكري – توفير حاضنة محافظة داخل البيئة الجامعية –تقديم الدعم للأنشطة الشبابية.",
+wantToBePartner : " هل ترغب بالشراكة مع نادي الطلاب السوريين؟ نبحث دائمًا عن منظمات وشركات للتعاون معها في الفعاليات والمبادرات والفرص المتاحة لأعضائنا."
+,BecomeAPartner:"تريد ان تصبح شريكا ؟ ",
+Announcements: "الأخبار",
+Login: "تسجيل الدخول",
+BackHome : "  ← العودة الى الصفحة الرئيسية",
+Email:"البريد الإلكتروني",
+Password:"كلمة السر",
+ForgotPassword:"نسيت كلمة السر؟ ",
+EnterYourEmail:"أدخل بريدك الإلكتروني",
+EnterYourPassword:"ادخل كلمة المرور",
+LoggingIn: "جاري تسجيل الدخول",
+Welcome:"اهلا ",
+AddAnnouncement:"اضف خبرا للطلاب",
+AnouncementTitle:"عنوان الخبر",
+AnouncementExp:"شرح الخبر",
+NoFile:"لم يتم اختيار ملفات",
+ChooseFile:"اختر ملفا",
 
-
-
+WebsiteSettings:"إعدادات الموقع",
+ManageAnouncements:"إدارة الأخبار",
+NoAnnouncementsAv:"لا يوجد خبر محمل",
+Logout:"تسجيل خروج",
+CreatedBy:"تم النشر من قبل : ",
+ONdate:"بتاريخ",
+AnnouncementAdded:"تم نشر الخبر بنجاح ! ",
+VisitWebsite:"زيارة الموقع",
+Insta:"@SSC.FSMVU",
+DeleteAnnouncement:"مسح الخبر"
 
     },
   },

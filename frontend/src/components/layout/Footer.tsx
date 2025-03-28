@@ -19,13 +19,7 @@ const Footer = () => {
             <p className="text-muted-foreground max-w-md">
             {t("supportSub")}
             </p>
-            <div className="flex space-x-4">
             
-              <a href="https://www.instagram.com/ssc.fsmvu/" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-primary transition-colors" aria-label="Instagram">
-                <Instagram className="h-5 w-5" />
-              </a>
-            
-            </div>
           </div>
 
         
@@ -39,8 +33,11 @@ const Footer = () => {
                 <span>{t("UniversityPlace")}</span>
               </div>
               <div className="flex items-center space-x-3 text-foreground/60">
-                <Phone className="phoneNumber h-5 w-5 flex-shrink-0" />
-                <span>{t("PhoneContact")}</span>
+                <Phone className=" h-5 w-5 flex-shrink-0 " />
+               
+                <p className='phoneNumber '>{t("PhoneContact")}</p>
+               
+               
               </div>
               <div className="flex items-center space-x-3 text-foreground/60">
                 <Mail className="h-5 w-5 flex-shrink-0" />
@@ -48,12 +45,22 @@ const Footer = () => {
                 Sscfsmvu@gmail.com
                 </a>
               </div>
+
+              <div className="flex space-x-4">
+            
+             
+                <Instagram className="h-5 w-5" />
+                <a href="https://www.instagram.com/ssc.fsmvu/" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-primary transition-colors" aria-label="Instagram">
+       {t("Insta")}
+              </a>
+            
+            </div>
             </div>
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-border/40 text-center text-sm text-muted-foreground">
-          <p>© {currentYear} Syrian Students Club - FSM University. All rights reserved.</p>
+          <p>© {currentYear} SSC FSMVU</p>
         </div>
       </div>
     </footer>

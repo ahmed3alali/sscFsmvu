@@ -25,7 +25,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
 }) => {
   return (
     <div 
-      className="flex flex-col items-center text-center animate-slideUp" id='team'
+      className="flex flex-col items-center text-center animate-slideUp" 
       style={{ animationDelay: `${delay}ms` }}
     >
       <div className="relative mb-6">
@@ -97,7 +97,7 @@ const TeamSection: React.FC = () => {
   ];
 
   return (
-    <section className="section">
+    <section className="section" id='team'>
       <div className="page-container">
         <h2 className="section-title">{t("OurTeam")}</h2>
         <p className="section-subtitle">

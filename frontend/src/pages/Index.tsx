@@ -14,6 +14,7 @@ import fsmBasic from "../images/2.png"
 import workshop_first from "../images/warsheh1.png"
 import workshop_second from "../images/warsheh2.png"
 import { useTranslation } from 'react-i18next';
+import { HashLink } from "react-router-hash-link";
 const Index = () => {
 
   const {t} = useTranslation();

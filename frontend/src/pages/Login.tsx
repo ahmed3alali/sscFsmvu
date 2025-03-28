@@ -3,10 +3,18 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Eye, EyeOff, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import {useDispatch} from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-
+import axios from 'axios';
+import { loginSuccess } from '../../src/Redux/authSlice.ts';
+import logo from "../../src/images/Ssc.png"
+import { t } from 'i18next';
 const Login = () => {
+
+
+  const navigate =useNavigate();
+  const dispatch = useDispatch();
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
@@ -19,22 +27,42 @@ const Login = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
-    
-    // This would typically connect to a backend, but we're keeping it frontend-only
-    console.log(isLogin ? 'Login attempt' : 'Signup attempt', {
+     // Reset error message before making the API call
+
+    // Prepare data for the API request
+    const requestData = {
       email,
-      name: !isLogin ? name : undefined
-    });
+      password
+    };
+
+    try {
+      // Make the API request to login the user
+      const response = await axios.post('http://localhost:4000/api/v1/login', requestData); // Make sure the endpoint is correct
+
+      // If login is successful, dispatch loginSuccess to update Redux store
+      dispatch(loginSuccess({ user: response.data.user, token: response.data.token }));
+
+
+
+      // Redirect to homepage after successful login
+      setTimeout(() => {
+        navigate('/admin');  // Navigate to home page after successful login
+      }, 2000);
+    } catch (error) {
+      // If the request fails, set an error message
+     console.log("invalid email or password");
+     
+      setSubmitted(false); // Reset submitted state
+    }
 
     // Reset form after submission
     setTimeout(() => {
       setSubmitted(false);
       setEmail('');
       setPassword('');
-      setName('');
     }, 2000);
   };
 
@@ -58,10 +86,11 @@ const Login = () => {
           <div className="absolute inset-0 flex items-center justify-center p-12">
             <div className="max-w-md text-white z-10">
               <div className="mb-6 text-4xl font-bold">
-                Syrian Students Club
+                <img src={logo}></img>
+           {t("caroselHeader")}
               </div>
               <div className="text-xl">
-                Join our community of Syrian students at FSM University to connect, collaborate, and celebrate our shared heritage.
+               
               </div>
             </div>
           </div>
@@ -72,30 +101,22 @@ const Login = () => {
           <div className="max-w-md w-full space-y-8 animate-fadeIn">
             {/* Logo and Back Link */}
             <div className="flex justify-between items-center">
-              <Link to="/" className="text-xl font-bold">
-                <span className="text-primary">Syrian</span> Students Club
-              </Link>
+          
               <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                ← Back to Home
+               {t("BackHome")}
               </Link>
             </div>
 
             {/* Title */}
             <div>
-              <h2 className="text-3xl font-bold">{isLogin ? 'Welcome Back' : 'Join Our Club'}</h2>
-              <p className="mt-2 text-muted-foreground">
-                {isLogin 
-                  ? 'Sign in to access your account and club resources' 
-                  : 'Create an account to become a member of our community'}
-              </p>
+              <h2 className="text-3xl font-bold">{t("Login")}</h2>
+              
             </div>
 
             {/* Success Message (shown after form submission) */}
             {submitted && (
               <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-600 animate-fadeIn">
-                {isLogin 
-                  ? 'Login successful! Redirecting...' 
-                  : 'Registration successful! Please check your email to verify your account.'}
+              {t("LoggingIn")}
               </div>
             )}
 
@@ -117,13 +138,13 @@ const Login = () => {
               )}
 
               <div className="space-y-2">
-                <Label htmlFor="email">Email Address</Label>
+                <Label htmlFor="email">  {t("Email")}</Label>
                 <Input 
                   id="email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
+                  placeholder= {t("EnterYourEmail")}
                   required
                   className="h-12"
                 />
@@ -131,10 +152,10 @@ const Login = () => {
 
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">{t("Password")}</Label>
                   {isLogin && (
                     <a href="#" className="text-sm text-primary hover:text-primary/80 transition-colors">
-                      Forgot password?
+                     {t("ForgotPassword")}
                     </a>
                   )}
                 </div>
@@ -144,7 +165,7 @@ const Login = () => {
                     type={showPassword ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Enter your password"
+                    placeholder={t("EnterYourPassword")}
                     required
                     className="h-12 pr-10"
                   />
@@ -168,23 +189,14 @@ const Login = () => {
                 className="w-full h-12 rounded-full text-base"
                 disabled={submitted}
               >
-                {isLogin ? 'Sign In' : 'Create Account'}
+               {t("Login")}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </form>
 
             {/* Toggle between Login and Signup */}
             <div className="text-center">
-              <p className="text-sm text-muted-foreground">
-                {isLogin ? "Don't have an account? " : "Already have an account? "}
-                <button
-                  type="button"
-                  onClick={toggleView}
-                  className="text-primary hover:text-primary/80 transition-colors font-medium"
-                >
-                  {isLogin ? 'Sign Up' : 'Sign In'}
-                </button>
-              </p>
+             
             </div>
           </div>
         </div>

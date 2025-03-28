@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import logo from "../../images/Ssc.png";
-import { t } from "i18next";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = () => {
   const { i18n } = useTranslation();
@@ -10,16 +10,13 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Close dropdown if clicked outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsDropdownOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -27,55 +24,51 @@ const Navbar = () => {
 
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
-    setIsDropdownOpen(false); // Close dropdown after selecting language
-    localStorage.setItem('i18nextLng', lang); // Store selected language in localStorage
-    window.location.reload(); // Refresh the page to apply language change
+    setIsDropdownOpen(false);
+    localStorage.setItem("i18nextLng", lang);
+    window.location.reload();
   };
 
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900 fixed top-0 w-full z-50">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+
         {/* Logo */}
         <a href="/" className="flex items-center space-x-3">
           <img src={logo} className="h-20 w-20" alt="Website Logo" />
         </a>
 
-        {/* Desktop Navigation Buttons */}
-        <div className="hidden md:flex space-x-4">
-          <a href="/" className="text-gray-900 dark:text-white hover:text-blue-500 ">
-          <div className="homeBtn rtl:ml-4">
-          {t("Home")}
-          </div>
-           
+        {/* Desktop Menu (Centered) */}
+        <div className="hidden md:flex space-x-6 rtl:space-x-reverse">
+          <a href="/" className="text-gray-900 dark:text-white hover:text-blue-500">
+            {i18n.t("Home")}
           </a>
-          <a href="#team" className="text-gray-900 dark:text-white hover:text-blue-500">
-            {t("Team")}
-          </a>
-          
-          <a href="#aboutUs" className="text-gray-900 dark:text-white hover:text-blue-500">
-          {t("AboutUs")}
-          </a>
-
-          <Link to="/rules" className="text-gray-900 dark:text-white hover:text-blue-500">
-            {t("Rules")}
+          <HashLink smooth to="/#team" className="text-gray-900 dark:text-white hover:text-blue-500">
+            {i18n.t("Team")}
+          </HashLink>
+          <HashLink smooth to="/#aboutUs" className="text-gray-900 dark:text-white hover:text-blue-500">
+            {i18n.t("AboutUs")}
+          </HashLink>
+          <Link to="/announcements" className="text-gray-900 dark:text-white hover:text-blue-500">
+            {i18n.t("Announcements")}
           </Link>
-          <a href="#contact" className="text-gray-900 dark:text-white hover:text-blue-500">
-          {t("Contact")}
-          </a>
+          <HashLink smooth to="/#contact" className="text-gray-900 dark:text-white hover:text-blue-500">
+            {i18n.t("Contact")}
+          </HashLink>
         </div>
 
-        {/* Language Selector */}
-        <div className="relative" ref={dropdownRef}>
+        {/* Desktop Language Selector (Right) */}
+        <div className="hidden md:block relative" ref={dropdownRef}>
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+            className="px-4 py-2 text-sm font-medium text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
           >
             🌍 {i18n.language === "en" ? "English (US)" : "العربية"}
           </button>
 
           {/* Dropdown Menu */}
           {isDropdownOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-700 border rounded-lg shadow-lg">
+            <div className={`absolute ${i18n.language === "ar" ? "left-0" : "right-0"} mt-2 w-48 bg-white dark:bg-gray-700 border rounded-lg shadow-lg`}>
               <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                 <li>
                   <button
@@ -98,44 +91,86 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Mobile Button (Hamburger) */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden text-gray-900 dark:text-white"
-          aria-label="Toggle navigation"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="h-6 w-6"
+        {/* Mobile Menu + Language Button in ONE ROW */}
+        <div className="flex items-center space-x-4 rtl:space-x-reverse md:hidden">
+
+          {/* Mobile Language Selector */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="px-4 py-2 text-sm font-medium text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+              🌍
+            </button>
+
+            {/* Dropdown Menu */}
+            {isDropdownOpen && (
+              <div className={`absolute ${i18n.language === "ar" ? "left-0" : "right-0"} mt-2 w-32 bg-white dark:bg-gray-700 border rounded-lg shadow-lg`}>
+                <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+                  <li>
+                    <button
+                      onClick={() => changeLanguage("en")}
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 w-full text-left"
+                    >
+                      🇺🇸 EN
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => changeLanguage("ar")}
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 w-full text-left"
+                    >
+                      🇸🇦 AR
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
+
+          {/* Mobile Menu Button (Hamburger) */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-gray-900 dark:text-white"
+            aria-label="Toggle navigation"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="h-6 w-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-16 left-0 w-full bg-white dark:bg-gray-700 shadow-lg">
+        <div className="md:hidden absolute top-16 left-0 w-full bg-white dark:bg-gray-700 shadow-lg">
           <div className="flex flex-col space-y-2 p-4">
             <a href="/" className="text-gray-900 dark:text-white hover:text-blue-500">
-              Home
+              {i18n.t("Home")}
             </a>
-            <a href="/about" className="text-gray-900 dark:text-white hover:text-blue-500">
-              About Us
+            <a href="#team" className="text-gray-900 dark:text-white hover:text-blue-500">
+              {i18n.t("Team")}
             </a>
-            <a href="/services" className="text-gray-900 dark:text-white hover:text-blue-500">
-              Services
+            <a href="#aboutUs" className="text-gray-900 dark:text-white hover:text-blue-500">
+              {i18n.t("AboutUs")}
             </a>
-            <a href="/contact" className="text-gray-900 dark:text-white hover:text-blue-500">
-              Contact
+            <Link to="/announcements" className="text-gray-900 dark:text-white hover:text-blue-500">
+              {i18n.t("Announcements")}
+            </Link>
+            <a href="#contact" className="text-gray-900 dark:text-white hover:text-blue-500">
+              {i18n.t("Contact")}
             </a>
           </div>
         </div>
