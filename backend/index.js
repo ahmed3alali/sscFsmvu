@@ -14,7 +14,9 @@ app.use(cors({
     credentials:true,  // Specify the allowed headers
   }));
 
-
+  app.get("/", (req, res) => {
+    res.send("Hello World");
+  });
 
 
   // Handle uncaught exceptions
