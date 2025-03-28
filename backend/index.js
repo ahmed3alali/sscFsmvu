@@ -8,7 +8,7 @@ import userRoutes from "../backend/Router/authRoutes.js"
 import photoRouter from "../backend/Router/ImageRouter.js"
 const app = express();
 app.use(cors({
-    origin: '*',  // replace with your frontend URL
+    origin: 'https://ssc-fsmvu.vercel.app',  // replace with your frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],  // Specify the allowed methods
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials:true,  // Specify the allowed headers
