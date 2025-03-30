@@ -8,7 +8,7 @@ import userRoutes from "../backend/Router/authRoutes.js"
 import photoRouter from "../backend/Router/ImageRouter.js"
 const app = express();
 app.use(cors({
-  origin: ['https://sscfsmvu.org.tr', 'https://www.sscfsmvu.org.tr'],  // Allow both
+  origin: ['https://sscfsmvu.org.tr', 'https://www.sscfsmvu.org.tr','http://localhost:8080'],  // Allow both
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
