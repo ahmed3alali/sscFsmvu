@@ -89,7 +89,15 @@ AnnouncementAdded:"Announcement Posted ! ",
 TakweenExp:"Takween Printing Press offers a special 10% discount to the Syrian Students Club at FSM on all publications until the end of the year."
 ,VisitWebsite:"Visit Website"
 ,Insta:"@SSC.FSMVU",
-DeleteAnnouncement:"Delete Announcement"
+DeleteAnnouncement:"Delete Announcement",
+InvalidEmailOrPassword:"Invalid Email Or Password",
+announcementDeleted:"Announcement Deleted Successfully",
+HomeHelmet: "Home Page - SSC FSMVU",
+AnnouncementHelmet:"Announcements - SSC FSMVU",
+PartnersHelmet:"Our Partners - SSC FSMVU",
+RulesHelmet:"Rules - SSC FSMVU",
+AdminPanelHelmet:"Admin Panel - SSC FSMVU",
+LoginHelmet:"Login - SSC FSMVU",
 },
   },
   ar: {
@@ -177,7 +185,15 @@ ONdate:"بتاريخ",
 AnnouncementAdded:"تم نشر الخبر بنجاح ! ",
 VisitWebsite:"زيارة الموقع",
 Insta:"@SSC.FSMVU",
-DeleteAnnouncement:"مسح الخبر"
+DeleteAnnouncement:"مسح الخبر",
+InvalidEmailOrPassword: "كلمة المرور او البريد الإلكتروني غير صحيحة",
+announcementDeleted: "تم مسح الخبر بنجاح ! ",
+HomeHelmet: "الصفحة الرئيسية - تجمع الطلبة السوريين ",
+AnnouncementHelmet:"آخر الأخبار - تجمع الطلبة السوريين",
+PartnersHelmet:"الشركاء - تجمع الطلبة السوريين",
+RulesHelmet:"النظام الداخلي - تجمع الطلبة السوريين",
+AdminPanelHelmet:"لوحة التحكم - تجمع الطلبة السوريين",
+LoginHelmet:"تسجيل دخول - تجمع الطلبة السوريين",
 
     },
   },

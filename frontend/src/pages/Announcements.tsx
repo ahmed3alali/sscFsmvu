@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "@/components/layout/Navbar";
 import { t } from "i18next";
+import Footer from "@/components/layout/Footer";
+import { Helmet } from "react-helmet-async";
 
 interface Announcement {
   id: string;
@@ -29,19 +31,38 @@ export const Announcements: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6">
+
+    <>
+
+<Helmet>
+<title>{t("AnnouncementHelmet")}</title>
+        <meta name="description" content="Welcome to the home page of My Website" />
+        <meta name="keywords" content="home, website, React, helmet" />
+      
+
+
+</Helmet>
+    
+    <div className="flex  justify-center min-h-screen p-6 mt-32 ">
       <Navbar />
-      <h1 className="text-2xl font-bold mb-6">{t("Announcements")}</h1>
+     
 
       {loading ? (
         <div className="flex justify-center items-center h-40">
-          <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin "></div>
         </div>
       ) : (
         announcements.map((announcement) => (
-          <div
+          
+          <div className="announcementContainer flex-col justify-center text-center">
+            <div className="headerNews">
+            <h1 className="text-2xl font-bold mb-6">{t("Announcements")}</h1>
+
+            </div>
+
+<div
             key={announcement.id}
-            className="p-6 border rounded-lg shadow-md bg-white dark:bg-gray-800 w-full max-w-lg text-center"
+            className="p-6 border rounded-lg shadow-md bg-white dark:bg-gray-800 w-full max-w-lg text-center bg-red-400"
           >
             <p className="text-lg font-medium text-blue-600">{announcement.message}</p>
             <p className="text-lg font-medium text-gray-600">{announcement.explination}</p>
@@ -58,8 +79,16 @@ export const Announcements: React.FC = () => {
               </div>
             )}
           </div>
+
+
+          </div>
+          
+       
         ))
       )}
     </div>
+    <Footer/>
+    </>
+    
   );
 };

@@ -10,6 +10,7 @@ import axios from 'axios';
 import { loginSuccess } from '../../src/Redux/authSlice.ts';
 import logo from "../../src/images/Ssc.png"
 import { t } from 'i18next';
+import { Helmet } from 'react-helmet-async';
 const Login = () => {
 
 
@@ -21,7 +22,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [submitted, setSubmitted] = useState(false);
-
+const [error,setError] = useState<string | null>(null);
   useEffect(() => {
     // Scroll to top on page load
     window.scrollTo(0, 0);
@@ -29,7 +30,9 @@ const Login = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+   
     setSubmitted(true);
+    setError(null);
      // Reset error message before making the API call
 
     // Prepare data for the API request
@@ -54,6 +57,7 @@ const Login = () => {
     } catch (error) {
       // If the request fails, set an error message
      console.log("invalid email or password");
+     setError(t("InvalidEmailOrPassword"));
      
       setSubmitted(false); // Reset submitted state
     }
@@ -73,6 +77,15 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+
+<Helmet>
+<title>{t("LoginHelmet")}</title>
+        <meta name="description" content="Welcome to the home page of My Website" />
+        <meta name="keywords" content="home, website, React, helmet" />
+      
+
+
+</Helmet>
       <div className="flex flex-1 w-full">
         {/* Image Section */}
         <div className="hidden lg:block lg:w-1/2 relative">
@@ -120,6 +133,12 @@ const Login = () => {
               </div>
             )}
 
+            {error&& (
+
+<div className='p-4 bg-red-50 border border-red-200 rounded-lg text-red-600 animate-fadeIn'> {error}</div>
+
+            )}
+
             {/* Form */}
             <form className="space-y-6" onSubmit={handleSubmit}>
               {!isLogin && (
@@ -151,14 +170,7 @@ const Login = () => {
               </div>
 
               <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <Label htmlFor="password">{t("Password")}</Label>
-                  {isLogin && (
-                    <a href="#" className="text-sm text-primary hover:text-primary/80 transition-colors">
-                     {t("ForgotPassword")}
-                    </a>
-                  )}
-                </div>
+          
                 <div className="relative">
                   <Input 
                     id="password"

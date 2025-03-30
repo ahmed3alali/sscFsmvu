@@ -31,8 +31,8 @@ const ContactSection: React.FC = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-8 animate-slideUp " style={{ animationDelay: '200ms' }}>
-            <div className="flex items-start space-x-4 ">
+          <div className="space-y-8 animate-slideUp  " style={{ animationDelay: '200ms' }} >
+            <div className="flex items-start space-x-4 rtl:gap-2 ">
               <div className="bg-primary/10 p-3 rounded-full">
                 <MapPin className="h-6 w-6 text-primary" />
               </div>
@@ -49,7 +49,7 @@ const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-start space-x-4">
+            <div className="flex items-start space-x-4 rtl:gap-2" >
               <div className="bg-primary/10 p-3 rounded-full">
                 <Phone className="h-6 w-6 text-primary" />
               </div>
@@ -59,7 +59,7 @@ const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-start space-x-4">
+            <div className="flex items-start space-x-4 rtl:gap-2">
               <div className="bg-primary/10 p-3 rounded-full">
                 <Clock className="h-6 w-6 text-primary" />
               </div>
@@ -72,7 +72,7 @@ const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-start space-x-4">
+            <div className="flex items-start space-x-4 rtl:gap-2">
               <div className="bg-primary/10 p-3 rounded-full">
                 <Mail className="h-6 w-6 text-primary" />
               </div>
@@ -84,8 +84,8 @@ const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            <Button className="rounded-full px-8 py-6 text-base">
-              <a href="mailto:example@example.com">
+            <Button className="rounded-full px-8 py-6 text-base rtl:gap-2">
+              <a href="mailto:Sscfsmvu@gmail.com">
               {t("ContactUs")}
 
               </a>

@@ -8,7 +8,8 @@ import syria2 from "../images/Syria3.jpg"
 
 import MainLayout from '@/components/layout/MainLayout';
 import { t } from 'i18next'
-import { Footer } from 'react-day-picker'
+
+import { Helmet } from 'react-helmet-async'
 const Faaliyetler = () => {
 
 
@@ -27,6 +28,15 @@ const Faaliyetler = () => {
   return (
     
     <MainLayout>
+
+<Helmet>
+<title>{t("HomeHelmet")}</title>
+        <meta name="description" content="Welcome to the home page of My Website" />
+        <meta name="keywords" content="home, website, React, helmet" />
+      
+
+
+</Helmet>
     {/* Hero Section with Carousel */}
     <section className="relative">
     <div className="header mt-20 flex justify-center mb-10 text-[40px]">

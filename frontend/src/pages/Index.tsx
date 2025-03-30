@@ -10,7 +10,7 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import fsm1 from "../images/1.png";
 import fsmBasic from "../images/2.png"
-
+import { Helmet } from "react-helmet-async";
 import workshop_first from "../images/warsheh1.png"
 import workshop_second from "../images/warsheh2.png"
 import { useTranslation } from 'react-i18next';
@@ -31,7 +31,17 @@ const Index = () => {
   }, []);
 
   return (
+   
     <MainLayout>
+
+<Helmet>
+<title>{t("HomeHelmet")}</title>
+        <meta name="description" content="Welcome to the home page of My Website" />
+        <meta name="keywords" content="home, website, React, helmet" />
+      
+
+
+</Helmet>
       {/* Hero Section with Carousel */}
       <section className="relative">
         <Carousel images={carouselImages} />

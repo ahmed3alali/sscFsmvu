@@ -23,6 +23,12 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 const store = configureStore({
   reducer: persistedReducer,
   devTools: process.env.NODE_ENV !== "production", // Enable Redux DevTools in non-production environments
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: ["persist/PERSIST", "persist/REHYDRATE"],
+      },
+    }),
 });
 
 // Create a persistor to persist the store
@@ -34,6 +40,5 @@ export { store, persistor };
 // Export RootState and AppDispatch for TypeScript types
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-
 
 export default store;

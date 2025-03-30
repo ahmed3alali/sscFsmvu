@@ -20,6 +20,8 @@ import './index.css';
 import Faaliyetler from "./pages/Faaliyetler.tsx";
 import { Announcements } from "./pages/Announcements.tsx";
 import { AdminPanel } from "./pages/AdminPanel.tsx";
+import Protection from "./protection/Protection.tsx";
+import {HelmetProvider} from "react-helmet-async"
 
 const queryClient = new QueryClient();
 
@@ -29,7 +31,9 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <HelmetProvider>
         <BrowserRouter>
+        
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/team" element={<Team />} />
@@ -38,10 +42,11 @@ const App = () => (
             <Route path="/faaliyet" element={<Faaliyetler />} />
             <Route path="/login" element={<Login />} />
             <Route path="/announcements" element={<Announcements />} />
-            <Route path="/admin" element={<AdminPanel />} />
+            <Route path="/admin" element={<Protection />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
+        </HelmetProvider>
       </TooltipProvider>
     </QueryClientProvider>
   </Provider>  

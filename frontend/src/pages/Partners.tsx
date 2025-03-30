@@ -8,6 +8,7 @@ import { t } from 'i18next';
 import takween from "../images/takween.png"
 import itihad from "../images/syrianItihad.png"
 import tibyan from "../images/tibyan.png"
+import { Helmet } from 'react-helmet-async';
 interface PartnerCardProps {
   name: string;
   logo: string;
@@ -32,6 +33,16 @@ const PartnerCard: React.FC<PartnerCardProps> = ({
       className="group bg-background border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 animate-slideUp "
       style={{ animationDelay: `${index * 100}ms` }}
     >
+
+
+<Helmet>
+<title>{t("PartnersHelmet")}</title>
+        <meta name="description" content="Welcome to the home page of My Website" />
+        <meta name="keywords" content="home, website, React, helmet" />
+      
+
+
+</Helmet>
       <div className="h-48 overflow-hidden">
         <img 
           src={logo} 

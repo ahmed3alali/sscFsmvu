@@ -6,6 +6,7 @@ import { logout } from "../../src/Redux/authSlice";
 import { useNavigate } from "react-router-dom";
 import { RootState } from "../../src/Redux/store";
 import { t } from "i18next";
+import { Helmet } from "react-helmet-async";
 
 export const AdminPanel: React.FC = () => {
   const [message, setMessage] = useState("");
@@ -86,8 +87,9 @@ export const AdminPanel: React.FC = () => {
   const handleDeleteAnnouncement = async (id: string) => {
     try {
       const response = await axios.delete(`https://ssc-fsmvu-backend.vercel.app/api/v1/announcement/${id}`);
-      alert(response.data.message);
+    
       setAnnouncements((prev) => prev.filter((announcement) => announcement._id !== id));
+      alert(t("announcementDeleted"));
     } catch (error) {
       console.error("Error deleting announcement:", error);
     }
@@ -95,6 +97,15 @@ export const AdminPanel: React.FC = () => {
 
   return (
     <>
+
+<Helmet>
+<title>{t("AdminPanelHelmet")}</title>
+        <meta name="description" content="Welcome to the home page of My Website" />
+        <meta name="keywords" content="home, website, React, helmet" />
+      
+
+
+</Helmet>
       <AdminNavbar />
       <div className="max-w-6xl mx-auto p-6 bg-white dark:bg-gray-800 shadow-md rounded-lg mt-[50px]">
         <h1 className="text-xl font-bold mb-4">Admin Dashboard</h1>
@@ -187,11 +198,16 @@ export const AdminPanel: React.FC = () => {
 
           <div className="p-4 border rounded-lg shadow-md">
             <h2 className="text-lg font-bold mb-2">{t("WebsiteSettings")}</h2>
-            <button onClick={handleLogout} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+
+<p>UNDER DEVELOPMENT 🛠️👷‍♂️.. COMING SOON</p>
+
+           
+          </div>
+          
+        </div>
+        <button onClick={handleLogout} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-10">
               {t("Logout")}
             </button>
-          </div>
-        </div>
       </div>
     </>
   );

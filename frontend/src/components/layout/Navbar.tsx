@@ -30,12 +30,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900 fixed top-0 w-full z-50">
+    <nav className="bg-white border-gray-200 dark:bg-gray-900 fixed top-0 w-full z-50 h-30">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
 
         {/* Logo */}
         <a href="/" className="flex items-center space-x-3">
-          <img src={logo} className="h-20 w-20" alt="Website Logo" />
+          <img src={logo} className="h-24 w-24" alt="Website Logo" />
         </a>
 
         {/* Desktop Menu (Centered) */}
@@ -157,21 +157,21 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-16 left-0 w-full bg-white dark:bg-gray-700 shadow-lg">
           <div className="flex flex-col space-y-2 p-4">
-            <a href="/" className="text-gray-900 dark:text-white hover:text-blue-500">
+            <Link to="/" className="text-gray-900 dark:text-white hover:text-blue-500">
               {i18n.t("Home")}
-            </a>
-            <a href="#team" className="text-gray-900 dark:text-white hover:text-blue-500">
+            </Link>
+            <HashLink to="/#team" className="text-gray-900 dark:text-white hover:text-blue-500">
               {i18n.t("Team")}
-            </a>
-            <a href="#aboutUs" className="text-gray-900 dark:text-white hover:text-blue-500">
+            </HashLink>
+            <HashLink to="/#aboutUs" className="text-gray-900 dark:text-white hover:text-blue-500">
               {i18n.t("AboutUs")}
-            </a>
+            </HashLink>
             <Link to="/announcements" className="text-gray-900 dark:text-white hover:text-blue-500">
               {i18n.t("Announcements")}
             </Link>
-            <a href="#contact" className="text-gray-900 dark:text-white hover:text-blue-500">
+            <HashLink to="/#contact" className="text-gray-900 dark:text-white hover:text-blue-500">
               {i18n.t("Contact")}
-            </a>
+            </HashLink>
           </div>
         </div>
       )}

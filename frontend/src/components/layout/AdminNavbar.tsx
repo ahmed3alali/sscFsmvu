@@ -159,6 +159,9 @@ const AdminNavbar = () => {
             <Link to="/announcements" className="text-gray-900 dark:text-white hover:text-blue-500">
               {i18n.t("Announcements")}
             </Link>
+
+
+            
            
           </div>
         </div>

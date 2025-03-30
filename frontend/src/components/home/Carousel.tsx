@@ -59,21 +59,9 @@ const Carousel: React.FC<CarouselProps> = ({
       ))}
 
       {/* Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/50 backdrop-blur-sm text-foreground rounded-full p-2 hover:bg-background/70 transition-all focus:outline-none focus:ring-2 focus:ring-primary"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="h-6 w-6" />
-      </button>
       
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/50 backdrop-blur-sm text-foreground rounded-full p-2 hover:bg-background/70 transition-all focus:outline-none focus:ring-2 focus:ring-primary"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="h-6 w-6" />
-      </button>
+       
+     
 
       {/* Dots */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">

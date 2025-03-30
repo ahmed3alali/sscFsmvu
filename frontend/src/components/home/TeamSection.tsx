@@ -3,6 +3,7 @@ import React from 'react';
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { t } from 'i18next';
+import { Link } from 'react-router-dom';
 
 interface TeamMemberProps {
   name: string;
@@ -114,14 +115,21 @@ const TeamSection: React.FC = () => {
         "flex justify-center"
       )}
     >
+      
       <TeamMember 
         {...member}
         delay={index * 200}
       />
+      
     </div>
   ))}
+  
         </div>
       </div>
+   
+          
+          
+       
     </section>
   );
 };
