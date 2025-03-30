@@ -21,7 +21,7 @@ export const Announcements: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/v1/announcements")
+      .get("https://ssc-fsmvu-backend.vercel.app/api/v1/announcements")
       .then((response) => {
         console.log(response.data);
         setAnnouncements(response.data);

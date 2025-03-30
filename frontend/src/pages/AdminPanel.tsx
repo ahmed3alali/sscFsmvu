@@ -20,7 +20,7 @@ export const AdminPanel: React.FC = () => {
   const user = useSelector((state: RootState) => state.auth.user);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/api/v1/announcements")
+    axios.get("https://ssc-fsmvu-backend.vercel.app/api/v1/announcements")
       .then((response) => {
         setAnnouncements(response.data);
       })
@@ -64,7 +64,7 @@ export const AdminPanel: React.FC = () => {
     }
 
     try {
-      await axios.post("http://localhost:4000/api/v1/announcements", {
+      await axios.post("https://ssc-fsmvu-backend.vercel.app/api/v1/announcements", {
         message,
         explination,
         createdBy: user?.name,
@@ -75,7 +75,7 @@ export const AdminPanel: React.FC = () => {
       setImage(null);
       setExplination("");
 
-      const response = await axios.get("http://localhost:4000/api/v1/announcements");
+      const response = await axios.get("https://ssc-fsmvu-backend.vercel.app/api/v1/announcements");
       setAnnouncements(response.data);
     } catch (error) {
       console.error("Error adding announcement:", error);
@@ -86,7 +86,7 @@ export const AdminPanel: React.FC = () => {
 
   const handleDeleteAnnouncement = async (id: string) => {
     try {
-      const response = await axios.delete(`http://localhost:4000/api/v1/announcement/${id}`);
+      const response = await axios.delete(`https://ssc-fsmvu-backend.vercel.app/api/v1/announcement/${id}`);
     
       setAnnouncements((prev) => prev.filter((announcement) => announcement._id !== id));
       alert(t("announcementDeleted"));
