@@ -8,11 +8,12 @@ import userRoutes from "../backend/Router/authRoutes.js"
 import photoRouter from "../backend/Router/ImageRouter.js"
 const app = express();
 app.use(cors({
-    origin: 'https://sscfsmvu.org.tr',  // replace with your frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],  // Specify the allowed methods
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials:true,  // Specify the allowed headers
-  }));
+  origin: ['https://sscfsmvu.org.tr', 'https://www.sscfsmvu.org.tr'],  // Allow both
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
+
 
   app.get("/", (req, res) => {
     res.send("Hello World");
