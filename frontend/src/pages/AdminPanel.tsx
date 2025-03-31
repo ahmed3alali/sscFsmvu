@@ -19,6 +19,7 @@ export const AdminPanel: React.FC = () => {
   const navigate = useNavigate();
   const user = useSelector((state: RootState) => state.auth.user);
 
+  
   useEffect(() => {
     axios.get("https://ssc-fsmvu-backend.vercel.app/api/v1/announcements")
       .then((response) => {

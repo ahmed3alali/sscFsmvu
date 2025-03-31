@@ -23,6 +23,8 @@ const Login = () => {
   const [name, setName] = useState('');
   const [submitted, setSubmitted] = useState(false);
 const [error,setError] = useState<string | null>(null);
+const API_URL = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
     // Scroll to top on page load
     window.scrollTo(0, 0);
@@ -43,7 +45,7 @@ const [error,setError] = useState<string | null>(null);
 
     try {
       // Make the API request to login the user
-      const response = await axios.post('https://ssc-fsmvu-backend.vercel.app/api/v1/login', requestData); // Make sure the endpoint is correct
+      const response = await axios.post(`${API_URL}/api/v1/login`, requestData); // Make sure the endpoint is correct
 
       // If login is successful, dispatch loginSuccess to update Redux store
       dispatch(loginSuccess({ user: response.data.user, token: response.data.token }));
