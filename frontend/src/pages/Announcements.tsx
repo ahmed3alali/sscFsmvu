@@ -18,10 +18,11 @@ interface Announcement {
 export const Announcements: React.FC = () => {
   const [announcements, setAnnouncements] = useState<Announcement[]>([]);
   const [loading, setLoading] = useState(true);
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     axios
-      .get("https://ssc-fsmvu-backend.vercel.app/api/v1/announcements")
+      .get(`${API_URL}/api/v1/announcements`)
       .then((response) => {
         console.log(response.data);
         setAnnouncements(response.data);
@@ -43,7 +44,7 @@ export const Announcements: React.FC = () => {
 
 </Helmet>
     
-    <div className="flex  justify-center min-h-screen p-6 mt-32 ">
+    <div className="flex  justify-center min-h-screen p-6 mt-20 ">
       <Navbar />
      
 

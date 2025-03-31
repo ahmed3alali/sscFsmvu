@@ -22,6 +22,7 @@ import { Announcements } from "./pages/Announcements.tsx";
 import { AdminPanel } from "./pages/AdminPanel.tsx";
 import Protection from "./protection/Protection.tsx";
 import {HelmetProvider} from "react-helmet-async"
+import ScrollUp from "./components/ScrollToTop.jsx"
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
         <Sonner />
         <HelmetProvider>
         <BrowserRouter>
+        <ScrollUp></ScrollUp>
         
           <Routes>
             <Route path="/" element={<Index />} />

@@ -9,11 +9,21 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const mobileMenuRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target)
+      ) {
         setIsDropdownOpen(false);
+      }
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target)
+      ) {
+        setIsMobileMenuOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -24,161 +34,88 @@ const Navbar = () => {
 
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
-    setIsDropdownOpen(false);
     localStorage.setItem("i18nextLng", lang);
+    setIsDropdownOpen(false);
     window.location.reload();
   };
 
   return (
-<nav className="bg-white border-gray-200 dark:bg-gray-900 fixed top-0 left-0 w-full z-50 h-30 rtl:md:ml-0 rtl:ml-9">
-
-
-
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-
-        {/* Logo */}
-        <a href="/" className="flex items-center space-x-3">
-          <img src={logo} className="h-24 w-24" alt="Website Logo" />
-        </a>
-
-        {/* Desktop Menu (Centered) */}
-        <div className="hidden md:flex space-x-6 rtl:space-x-reverse">
-          <a href="/" className="text-gray-900 dark:text-white hover:text-blue-500">
-            {i18n.t("Home")}
-          </a>
-          <HashLink smooth to="/#team" className="text-gray-900 dark:text-white hover:text-blue-500">
-            {i18n.t("Team")}
-          </HashLink>
-          <HashLink smooth to="/#aboutUs" className="text-gray-900 dark:text-white hover:text-blue-500">
-            {i18n.t("AboutUs")}
-          </HashLink>
-          <Link to="/announcements" className="text-gray-900 dark:text-white hover:text-blue-500">
-            {i18n.t("Announcements")}
-          </Link>
-          <HashLink smooth to="/#contact" className="text-gray-900 dark:text-white hover:text-blue-500">
-            {i18n.t("Contact")}
-          </HashLink>
-        </div>
-
-        {/* Desktop Language Selector (Right) */}
-        <div className="hidden md:block relative" ref={dropdownRef}>
-          <button
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="px-4 py-2 text-sm font-medium text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+    <nav className="bg-white border-gray-200 dark:bg-gray-900 fixed top-0 left-0 w-full z-50 p-4 flex items-center justify-between ">
+    {/* Logo */}
+    <a href="/">
+      <img src={logo} className="h-16 w-16" alt="Website Logo" />
+    </a>
+  
+    {/* Desktop Menu */}
+    <div className="hidden md:flex space-x-6 ">
+      <HashLink to="/#home" className="nav-link">{i18n.t("Home")}</HashLink>
+      <HashLink to="/#team" className="nav-link">{i18n.t("Team")}</HashLink>
+      <HashLink to="/#aboutUs" className="nav-link">{i18n.t("AboutUs")}</HashLink>
+      <Link to="/announcements" className="nav-link">{i18n.t("Announcements")}</Link>
+      <HashLink to="/#contact" className="nav-link">{i18n.t("Contact")}</HashLink>
+    </div>
+  
+    {/* Language Selector & Mobile Menu Button */}
+    <div className="flex items-center space-x-4">
+      {/* Language Selector (Visible on all screens) */}
+      <div className="relative  md:block" ref={dropdownRef}>
+        <button
+          onClick={() => setIsDropdownOpen((prev) => !prev)}
+          className="p-2 text-gray-900 dark:text-white"
+        >
+          🌍
+        </button>
+        {isDropdownOpen && (
+          <div
+            className={`absolute ${i18n.language === "ar" ? "left-0" : "right-0"} mt-2 w-32 bg-white dark:bg-gray-700 border rounded-lg shadow-lg animate-fadeIn`}
           >
-            🌍 {i18n.language === "en" ? "English (US)" : "العربية"}
-          </button>
-
-          {/* Dropdown Menu */}
-          {isDropdownOpen && (
-            <div className={`absolute ${i18n.language === "ar" ? "left-0" : "right-0"} mt-2 w-48 bg-white dark:bg-gray-700 border rounded-lg shadow-lg`}>
-              <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
-                <li>
-                  <button
-                    onClick={() => changeLanguage("en")}
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 w-full text-left"
-                  >
-                    🇺🇸 English (US)
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => changeLanguage("ar")}
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 w-full text-left"
-                  >
-                    🇸🇦 العربية
-                  </button>
-                </li>
-              </ul>
-            </div>
-          )}
-        </div>
-
-        {/* Mobile Menu + Language Button in ONE ROW */}
-        <div className="flex items-center space-x-4 rtl:space-x-reverse md:hidden">
-
-          {/* Mobile Language Selector */}
-          <div className="relative" ref={dropdownRef}>
-            <button
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="px-4 py-2 text-sm font-medium text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
-            >
-              🌍
-            </button>
-
-            {/* Dropdown Menu */}
-            {isDropdownOpen && (
-              <div className={`absolute ${i18n.language === "ar" ? "left-0" : "right-0"} mt-2 w-32 bg-white dark:bg-gray-700 border rounded-lg shadow-lg`}>
-                <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
-                  <li>
-                    <button
-                      onClick={() => changeLanguage("en")}
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 w-full text-left"
-                    >
-                      🇺🇸 EN
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() => changeLanguage("ar")}
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 w-full text-left"
-                    >
-                      🇸🇦 AR
-                    </button>
-                  </li>
-                </ul>
-              </div>
-            )}
+            <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+              <li>
+                <button onClick={() => changeLanguage("en")} className="dropdown-item">
+                  🇺🇸 English
+                </button>
+              </li>
+              <li>
+                <button onClick={() => changeLanguage("ar")} className="dropdown-item">
+                  🇸🇦 العربية
+                </button>
+              </li>
+            </ul>
           </div>
-
-          {/* Mobile Menu Button (Hamburger) */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-gray-900 dark:text-white"
-            aria-label="Toggle navigation"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="h-6 w-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
-        </div>
-
+        )}
       </div>
-
-      {/* Mobile Menu Dropdown */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-white dark:bg-gray-700 shadow-lg">
-          <div className="flex flex-col space-y-2 p-4">
-            <Link to="/" className="text-gray-900 dark:text-white hover:text-blue-500">
-              {i18n.t("Home")}
-            </Link>
-            <HashLink to="/#team" className="text-gray-900 dark:text-white hover:text-blue-500">
-              {i18n.t("Team")}
-            </HashLink>
-            <HashLink to="/#aboutUs" className="text-gray-900 dark:text-white hover:text-blue-500">
-              {i18n.t("AboutUs")}
-            </HashLink>
-            <Link to="/announcements" className="text-gray-900 dark:text-white hover:text-blue-500">
-              {i18n.t("Announcements")}
-            </Link>
-            <HashLink to="/#contact" className="text-gray-900 dark:text-white hover:text-blue-500">
-              {i18n.t("Contact")}
-            </HashLink>
-          </div>
+  
+      {/* Mobile Menu Button (Only on Small Screens) */}
+      <button
+        onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+        className="md:hidden text-gray-900 dark:text-white"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          className="h-6 w-6"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  
+    {/* Mobile Menu */}
+    {isMobileMenuOpen && (
+      <div ref={mobileMenuRef} className="md:hidden absolute top-0 left-0 w-full bg-white dark:bg-gray-700 shadow-lg animate-fadeIn">
+        <div className="flex flex-col space-y-2 p-4 text-center">
+          <HashLink to="/#home" className="nav-link">{i18n.t("Home")}</HashLink>
+          <HashLink to="/#team" className="nav-link">{i18n.t("Team")}</HashLink>
+          <HashLink to="/#aboutUs" className="nav-link">{i18n.t("AboutUs")}</HashLink>
+          <Link to="/announcements" className="nav-link">{i18n.t("Announcements")}</Link>
+          <HashLink to="/#contact" className="nav-link">{i18n.t("Contact")}</HashLink>
         </div>
-      )}
-    </nav>
+      </div>
+    )}
+  </nav>
+  
   );
 };
 
