@@ -4,7 +4,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import Carousel from '@/components/home/Carousel';
 import CounterSection from '@/components/home/CounterSection';
 import TeamSection from '@/components/home/TeamSection';
-import ContactSection from '@/components/home/ContactSection';
+
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -15,6 +15,7 @@ import workshop_first from "../images/warsheh1.png"
 import workshop_second from "../images/warsheh2.png"
 import { useTranslation } from 'react-i18next';
 import { HashLink } from "react-router-hash-link";
+import RulesSection from '@/components/home/RulesSection';
 const Index = () => {
 
   const {t} = useTranslation();
@@ -138,7 +139,7 @@ const Index = () => {
       <TeamSection />
 
       {/* Contact Section */}
-      <ContactSection />
+      <RulesSection />
     </MainLayout>
   );
 };

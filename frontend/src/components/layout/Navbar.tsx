@@ -32,6 +32,14 @@ const Navbar = () => {
     };
   }, []);
 
+
+  const closeMobMenu = () =>{
+
+
+setIsMobileMenuOpen(false);
+
+  }
+
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
     localStorage.setItem("i18nextLng", lang);
@@ -47,13 +55,15 @@ const Navbar = () => {
     </a>
   
     {/* Desktop Menu */}
-    <div className="hidden md:flex space-x-6 ">
+    <div className="hidden md:flex gap-6  ">
       <HashLink to="/#home" className="nav-link">{i18n.t("Home")}</HashLink>
-      <HashLink to="/#team" className="nav-link">{i18n.t("Team")}</HashLink>
-      <HashLink to="/#aboutUs" className="nav-link">{i18n.t("AboutUs")}</HashLink>
+      <HashLink to="/#team" className="nav-link  ">{i18n.t("Team")}</HashLink>
+     
       <Link to="/announcements" className="nav-link">{i18n.t("Announcements")}</Link>
-      <HashLink to="/#contact" className="nav-link">{i18n.t("Contact")}</HashLink>
+      <HashLink to="/#rules" className="nav-link">{i18n.t("Rules")}</HashLink>
+      <HashLink to="/#aboutUs" className="nav-link">{i18n.t("AboutUs")}</HashLink>
     </div>
+
   
     {/* Language Selector & Mobile Menu Button */}
     <div className="flex items-center space-x-4">
@@ -69,17 +79,22 @@ const Navbar = () => {
           <div
             className={`absolute ${i18n.language === "ar" ? "left-0" : "right-0"} mt-2 w-32 bg-white dark:bg-gray-700 border rounded-lg shadow-lg animate-fadeIn`}
           >
-            <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+            <ul className="py-2 text-sm text-gray-700 dark:text-gray-200   ">
+              
+              <div className="lang-btns flex-col justify-center ml-2 rtl:mr-2">
               <li>
                 <button onClick={() => changeLanguage("en")} className="dropdown-item">
-                  🇺🇸 English
+                   English
                 </button>
               </li>
               <li>
-                <button onClick={() => changeLanguage("ar")} className="dropdown-item">
-                  🇸🇦 العربية
+                <button onClick={() => changeLanguage("ar")} className="dropdown-item ">
+                   العربية
                 </button>
               </li>
+
+              </div>
+              
             </ul>
           </div>
         )}
@@ -106,11 +121,11 @@ const Navbar = () => {
     {isMobileMenuOpen && (
       <div ref={mobileMenuRef} className="md:hidden absolute top-0 left-0 w-full bg-white dark:bg-gray-700 shadow-lg animate-fadeIn">
         <div className="flex flex-col space-y-2 p-4 text-center">
-          <HashLink to="/#home" className="nav-link">{i18n.t("Home")}</HashLink>
-          <HashLink to="/#team" className="nav-link">{i18n.t("Team")}</HashLink>
-          <HashLink to="/#aboutUs" className="nav-link">{i18n.t("AboutUs")}</HashLink>
-          <Link to="/announcements" className="nav-link">{i18n.t("Announcements")}</Link>
-          <HashLink to="/#contact" className="nav-link">{i18n.t("Contact")}</HashLink>
+          <HashLink to="/#home" className="nav-link" onClick={closeMobMenu}>{i18n.t("Home")}</HashLink>
+          <HashLink to="/#team" className="nav-link"onClick={closeMobMenu}>{i18n.t("Team")}</HashLink>
+          <HashLink to="/#aboutUs" className="nav-link"onClick={closeMobMenu}>{i18n.t("AboutUs")}</HashLink>
+          <Link to="/announcements" className="nav-link"onClick={closeMobMenu}>{i18n.t("Announcements")}</Link>
+          <HashLink to="/#contact" className="nav-link"onClick={closeMobMenu}>{i18n.t("Contact")}</HashLink>
         </div>
       </div>
     )}
