@@ -125,7 +125,7 @@ setIsMobileMenuOpen(false);
           <HashLink to="/#team" className="nav-link"onClick={closeMobMenu}>{i18n.t("Team")}</HashLink>
           <HashLink to="/#aboutUs" className="nav-link"onClick={closeMobMenu}>{i18n.t("AboutUs")}</HashLink>
           <Link to="/announcements" className="nav-link"onClick={closeMobMenu}>{i18n.t("Announcements")}</Link>
-          <HashLink to="/#contact" className="nav-link"onClick={closeMobMenu}>{i18n.t("Contact")}</HashLink>
+          <HashLink to="/#rules" className="nav-link"onClick={closeMobMenu}>{i18n.t("Rules")}</HashLink>
         </div>
       </div>
     )}
