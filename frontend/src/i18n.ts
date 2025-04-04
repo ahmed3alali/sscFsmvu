@@ -39,11 +39,11 @@ const resources = {
 
 OurTeam: "Our Team",
 
-TeamsHeader: "Meet the dedicated individuals who lead our student club",
+TeamsHeader: "Meet our Board of Directors ",
 ContactUs: "Contact Us",
 SubtitleContact:" Get in touch with us and become part of our community",
 Location:"Location",
-UniversityPlace:"FSM University Campus, Student Activities Building, Room 204",
+UniversityPlace:"FSM University - Topkapi Campus",
 PhoneHeader:"Phone",
 PhoneContact:"+90 535 732 09 83",
 OfficeHours:"Avaliabe Hours ",
@@ -101,7 +101,9 @@ LoginHelmet:"Login - SSC FSMVU",
 YearOfProduction: "© SSC FSMVU - 2025",
 
 RulesSubSecond:"Take a look at our guidelines",
-RulesSub:"An approach towards building and renewal."
+RulesSub:"An approach towards building and renewal.",
+DownloadRulesMessage: "This file contains all details related to our rules and guidelines.",
+DownloadPDF:"Download PDF"
 },
   },
   ar: {
@@ -155,7 +157,7 @@ RulesSubSecond:"تعرف على نطامنا الداخلي",
 AboutUs:" من نحن", 
 Contact: "تواصل معنا",
 Team:"الفريق",
-RulesSub : "منهلج عملنا٬ نحو إعمار وتجديد ",
+RulesSub : "منهاج عملنا٬ نحو إعمار وتجديد ",
 Faaliyet :"الفعاليات",
 Takween : "مطبعة تكويين",
 Tibyan :"مبادرة تبيان", 
@@ -199,7 +201,9 @@ PartnersHelmet:"الشركاء - تجمع الطلبة السوريين",
 RulesHelmet:"النظام الداخلي - تجمع الطلبة السوريين",
 AdminPanelHelmet:"لوحة التحكم - تجمع الطلبة السوريين",
 LoginHelmet:"تسجيل دخول - تجمع الطلبة السوريين",
-YearOfProduction : "© SSC FSMVU - 2025"
+YearOfProduction : "© SSC FSMVU - 2025",
+DownloadRulesMessage:"يحتوي هذا الملف على كافة التفاصيل المتعلقة بنظامنا الداخلي.",
+DownloadPDF:"تحميل PDF"
 
     },
   },

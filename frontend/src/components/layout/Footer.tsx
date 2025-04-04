@@ -23,7 +23,7 @@ const Footer = () => {
         
 
           {/* Contact */}
-          <div className="space-y-4  mr-auto  text-[10px]">
+          <div className="space-y-4  mr-auto ltr:ml-auto ltr:mr-0  text-[10px] ">
             <h3 className="font-semibold text-lg">{t("ContactUs")}</h3>
             <div className="space-y-3 ">
               <div className="flex items-start space-x-3 text-foreground/60  rtl:gap-2">
