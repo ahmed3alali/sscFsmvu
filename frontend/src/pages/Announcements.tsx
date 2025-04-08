@@ -54,7 +54,7 @@ export const Announcements: React.FC = () => {
               key={announcement.id}
               className="flex flex-col items-center text-center w-full"
             >
-              <div className="p-6 border rounded-2xl shadow-md bg-gray-100 dark:bg-gray-800 w-full max-w-lg transition transform hover:scale-105">
+              <div className="p-6 border rounded-2xl shadow-md bg-gray-100 dark:bg-gray-800 w-full max-w-lg transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                 
                 {announcement.imageUrl && (
                   <img

@@ -71,7 +71,7 @@ const Index = () => {
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="rounded-full px-8 bg-background/30 backdrop-blur-sm hover:bg-background/50"
+                    className="rounded-full px-8 bg-background/30 backdrop-blur-sm hover:bg-background/50 "
                   >
                    {t("OurPartnersBtn")}
                     <ArrowRight className="ml-2 h-4 w-4" />
