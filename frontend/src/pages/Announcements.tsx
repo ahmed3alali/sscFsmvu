@@ -20,6 +20,8 @@ export const Announcements: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const API_URL = import.meta.env.VITE_API_URL;
 
+  /*
+
   useEffect(() => {
     axios
       .get(`${API_URL}/api/v1/announcements`)
@@ -30,6 +32,28 @@ export const Announcements: React.FC = () => {
       .catch((error) => console.error("Error fetching announcements:", error))
       .finally(() => setLoading(false));
   }, []);
+old news fetch 
+*/
+
+
+  useEffect(() => {
+    const fetchAnnouncements = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/api/v1/announcements`);
+        setAnnouncements(response.data);
+      } catch (error) {
+        console.error("Error fetching announcements", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+    fetchAnnouncements();
+  }, []);
+
+
+
+
 
   return (
     <>
