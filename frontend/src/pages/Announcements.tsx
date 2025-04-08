@@ -46,7 +46,10 @@ export const Announcements: React.FC = () => {
     
     <div className="flex  justify-center min-h-screen p-6 mt-20 ">
       <Navbar />
-     
+      <div className="headerNews">
+            <h1 className="text-2xl font-bold mb-6">{t("Announcements")}</h1>
+
+            </div>
 
       {loading ? (
         <div className="flex justify-center items-center h-40">
@@ -56,10 +59,7 @@ export const Announcements: React.FC = () => {
         announcements.map((announcement) => (
           
           <div className="announcementContainer flex-col justify-center text-center">
-            <div className="headerNews">
-            <h1 className="text-2xl font-bold mb-6">{t("Announcements")}</h1>
-
-            </div>
+         
 
 <div
             key={announcement.id}
