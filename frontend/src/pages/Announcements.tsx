@@ -42,9 +42,7 @@ export const Announcements: React.FC = () => {
       <Navbar />
 
       <div className="flex flex-col items-center min-h-screen p-6 mt-20 space-y-6">
-        <div className="headerNews">
-          <h1 className="text-2xl font-bold mb-6">{t("Announcements")}</h1>
-        </div>
+        <h1 className="text-3xl font-bold mb-8">{t("Announcements")}</h1>
 
         {loading ? (
           <div className="flex justify-center items-center h-40">
@@ -54,15 +52,31 @@ export const Announcements: React.FC = () => {
           announcements.map((announcement) => (
             <div
               key={announcement.id}
-              className="announcementContainer flex flex-col items-center text-center w-full"
+              className="flex flex-col items-center text-center w-full"
             >
-              <div className="p-6 border rounded-2xl shadow-md bg-gray-100 dark:bg-gray-800 w-full max-w-lg">
-                <p className="text-xl font-semibold text-blue-600 mb-2">{announcement.message}</p>
-                <p className="text-base text-gray-700 dark:text-gray-300 mb-4">{announcement.explination}</p>
-                <p className="text-sm text-gray-500">
+              <div className="p-6 border rounded-2xl shadow-md bg-gray-100 dark:bg-gray-800 w-full max-w-lg transition transform hover:scale-105">
+                
+                {announcement.imageUrl && (
+                  <img
+                    src={announcement.imageUrl}
+                    alt="Announcement"
+                    className="w-full h-64 object-cover rounded-lg mb-4"
+                  />
+                )}
+
+                <p className="text-xl font-semibold text-blue-600 mb-2">
+                  {announcement.message}
+                </p>
+
+                <p className="text-lg text-gray-600 mb-4">
+                  {announcement.explination}
+                </p>
+
+                <p className="text-sm text-gray-400">
                   {t("CreatedBy")}: {announcement.createdBy} •{" "}
                   {new Date(announcement.createdAt).toLocaleDateString()}
                 </p>
+
               </div>
             </div>
           ))
