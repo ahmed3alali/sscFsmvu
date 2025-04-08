@@ -70,34 +70,12 @@ setIsMobileMenuOpen(false);
       {/* Language Selector (Visible on all screens) */}
       <div className="relative  md:block" ref={dropdownRef}>
         <button
-          onClick={() => setIsDropdownOpen((prev) => !prev)}
+          onClick={()=> changeLanguage(i18n.language=== "en" ? "ar" : "en")}
           className="p-2 text-gray-900 dark:text-white"
         >
-          🌍
+               {i18n.language === "en" ? "AR" : "EN"}
         </button>
-        {isDropdownOpen && (
-          <div
-            className={`absolute ${i18n.language === "ar" ? "left-0" : "right-0"} mt-2 w-32 bg-white dark:bg-gray-700 border rounded-lg shadow-lg animate-fadeIn`}
-          >
-            <ul className="py-2 text-sm text-gray-700 dark:text-gray-200   ">
-              
-              <div className="lang-btns flex-col justify-center ml-2 rtl:mr-2">
-              <li>
-                <button onClick={() => changeLanguage("en")} className="dropdown-item">
-                   English
-                </button>
-              </li>
-              <li>
-                <button onClick={() => changeLanguage("ar")} className="dropdown-item ">
-                   العربية
-                </button>
-              </li>
-
-              </div>
-              
-            </ul>
-          </div>
-        )}
+      
       </div>
   
       {/* Mobile Menu Button (Only on Small Screens) */}
