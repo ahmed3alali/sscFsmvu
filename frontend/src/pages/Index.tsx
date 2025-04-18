@@ -10,9 +10,12 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import fsm1 from "../images/1.png";
 import fsmBasic from "../images/2.png"
+import sscfsvmuUskudar from "../images/fsmvu-sscfsmvu-uskudar.png"
+import sscfsmvuTopkap from "../images/sscfsmvu-fsmvu-topkapi.png"
 import { Helmet } from "react-helmet-async";
-import workshop_first from "../images/warsheh1.png"
+import sscfsmvuFaaliyet from "../images/sscfsmvu-faaliyet.jpeg"
 import workshop_second from "../images/warsheh2.png"
+import sscfsmvuUskudarV2 from "../images/sscfsmvu-uskudar.jpeg"
 import { useTranslation } from 'react-i18next';
 import { HashLink } from "react-router-hash-link";
 import RulesSection from '@/components/home/RulesSection';
@@ -22,7 +25,10 @@ const Index = () => {
   // Images for our carousel
   const carouselImages = [
     fsmBasic,
-    fsm1
+    sscfsvmuUskudar,
+    sscfsmvuTopkap,
+    fsm1,
+
    
   ];  
 
@@ -115,14 +121,14 @@ const Index = () => {
             <div className="relative h-[500px] animate-slideUp" style={{ animationDelay: '200ms' }}>
               <div className="absolute top-0 right-0 w-4/5 h-4/5 rounded-lg overflow-hidden shadow-2xl">
                 <img 
-                  src={workshop_first}
+                  src={sscfsmvuUskudarV2}
                   alt="Students collaborating" 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
               <div className="absolute bottom-0 left-0 w-2/3 h-2/3 rounded-lg overflow-hidden shadow-2xl border-8 border-background">
                 <img 
-                  src={workshop_second} 
+                  src={sscfsmvuFaaliyet} 
                   alt="Club meeting" 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />

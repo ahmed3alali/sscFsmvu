@@ -10,7 +10,7 @@ const resources = {
       joinUsBtn:"Join Us",
       OurPartnersBtn:"Our Partners",
 
-      SyrianGeneralItihad:"United Syrian Community",
+      SyrianGeneralItihad:"General Union Of Syrian Students",
       Tibyan: "Tibyan",
       Takween: "Takween Publishing House",
       
@@ -106,6 +106,116 @@ DownloadRulesMessage: "This file contains all details related to our rules and g
 DownloadPDF:"Download PDF"
 },
   },
+
+tr:{
+
+translation:{
+  
+  caroselHeader: "Suriyeli Öğrenciler Kulübü",
+  caroselSubHeader: "FSM Üniversitesi'ndeki Suriyeli öğrenciler için topluluk inşa ediyor, fırsatlar yaratıyor ve kültürel mirası koruyoruz.",
+
+  joinUsBtn: "Bize Katıl",
+  OurPartnersBtn: "Ortaklarımız",
+
+  SyrianGeneralItihad: "Suriyeli Öğrenciler Genel Birliği",
+  Tibyan: "Tibyan",
+  Takween: "Takween Yayıncılık",
+
+  supportSYRheader: "FSM Üniversitesi'ndeki Suriyeli Öğrencileri Destekliyoruz",
+  supportSub: "FSM Üniversitesi Suriyeli Öğrenciler Kulübü, akademik destek, kültürel etkinlikler ve ağ kurma fırsatları sunarak Suriyeli öğrenciler için evden uzakta bir yuva niteliğindedir.",
+  supportSub_second: "Misyonumuz, topluluk duygusunu geliştirmek, kültürel farkındalığı teşvik etmek ve öğrencilerin akademik ve profesyonel anlamda başarılı olmalarına yardımcı olmaktır.",
+
+  MeetTeamBtn: "Ekibimizle Tanışın",
+  AboutUsBtn: "Hakkımızda",
+
+  Statistics: "İstatistikler",
+  TogetherAchieved: "Birlikte çıktığımız bu yolculukta elde ettiğimiz başarıları kutluyoruz",
+  ProgramsMade: "Hazırlanan Programlar",
+  PartnerShips: "Ortaklıklar",
+  ActiveMembers: "Aktif Üyeler",
+  Mamdouh: "Mamdouh Al Masri",
+  President: "Başkan",
+  Diaa: "Diaa Azraq",
+  VicePresident: "Başkan Yardımcısı",
+  Shahid: "Shahid Akbazli",
+  Media: "Medya Sorumlusu",
+  Login: "Giriş Yap",
+
+  OurTeam: "Ekibimiz",
+  TeamsHeader: "Yönetim Kurulu ile Tanışın",
+  ContactUs: "Bize Ulaşın",
+  SubtitleContact: "Bizimle iletişime geçin ve topluluğumuzun bir parçası olun",
+  Location: "Konum",
+  UniversityPlace: "FSM Üniversitesi - Topkapı Kampüsü",
+  PhoneHeader: "Telefon",
+  PhoneContact: "+90 535 732 09 83",
+  OfficeHours: "Çalışma Saatleri",
+  DaysAvaliable: "Pazartesi - Cuma: 09:00 - 17:00",
+  OurEmailContact: "E-posta",
+SendUsMessageBtn: "Bize mesaj gönderin",
+Nooridin: "Noordin Abozaid",
+Horani: "Mohammed Horani",
+NoorJob: "İlişkiler Sorumlusu",
+HoraniJob: "Sekreterlik",
+
+Rules: "Kulüp Kuralları ve Politikaları",
+SubRulesHeader: "Tüm üyeler için olumlu ve verimli bir ortam sağlamak adına yönergeler",
+RulesSubSecond: "Kurallarımıza göz atın",
+RulesSub: "Birlikte inşa ve yenilenmeye yönelik bir yaklaşım.",
+DownloadRulesMessage: "Bu dosya, kurallarımız ve yönergelerimize dair tüm detayları içerir.",
+DownloadPDF: "PDF İndir",
+
+Home: "Ana Sayfa",
+AboutUs: "Hakkımızda",
+Contact: "İletişim",
+Team: "Ekibimiz",
+Faaliyet: "Etkinlikler",
+
+itihadExplination: "Dünya genelindeki Suriyeli öğrencileri temsil eden bağımsız, kâr amacı gütmeyen bir öğrenci birliği kuruluşudur. Suriyeli öğrencilerin mevcut sorunları ve gelecekleriyle ilgilenir, modern bir ulusal devlete geçiş için eğitimli bir nesil yetiştirmeyi amaçlar.",
+
+WhoIsTibyan: "Gençlere uygun şekilde dini faaliyetler sunan, Kuran-ı Kerim’i ezberleme, okuma ve tefekkür üzerinden odaklanan, entelektüel yönü hedefleyen gençlik programları sağlayan, üniversite ortamında muhafazakâr bir ortam sunan ve gençlik faaliyetlerini destekleyen bir topluluktur.",
+
+wantToBePartner: "FSM Üniversitesi Suriyeli Öğrenciler Kulübü ile ortak olmak ister misiniz? Etkinlikler, girişimler ve üyelerimiz için fırsatlar konusunda iş birliği yapabileceğimiz kurum ve işletmeler arıyoruz.",
+BecomeAPartner: "Ortak Olun",
+
+Announcements: "Duyurular",
+Email: "E-posta",
+Password: "Şifre",
+ForgotPassword: "Şifrenizi mi unuttunuz?",
+EnterYourEmail: "E-posta adresinizi girin",
+EnterYourPassword: "Şifrenizi girin",
+BackHome: "Ana Sayfaya Dön",
+LoggingIn: "Giriş yapılıyor, lütfen bekleyin",
+Welcome: "Hoş Geldiniz",
+AddAnnouncement: "Duyuru Ekle",
+AnouncementTitle: "Duyuru Başlığı",
+AnouncementExp: "Duyuru Açıklaması",
+NoFile: "Dosya seçilmedi",
+
+WebsiteSettings: "Web Sitesi Ayarları",
+ManageAnouncements: "Duyuruları Yönet",
+NoAnnouncementsAv: "Mevcut duyuru yok",
+Logout: "Çıkış Yap",
+
+  AnnouncementAdded: "Duyuru Yayınlandı!",
+  TakweenExp: "Takween Matbaası, yıl sonuna kadar FSM Üniversitesi Suriyeli Öğrenciler Kulübü’ne tüm yayınlarda özel %10 indirim sunmaktadır.",
+  VisitWebsite: "Web Sitesini Ziyaret Et",
+  Insta: "SSC.FSMVU",
+  DeleteAnnouncement: "Duyuruyu Sil",
+  InvalidEmailOrPassword: "Geçersiz e-posta veya şifre",
+  announcementDeleted: "Duyuru Başarıyla Silindi",
+  HomeHelmet: "Ana Sayfa - SSC FSMVU",
+  AnnouncementHelmet: "Duyurular - SSC FSMVU",
+  PartnersHelmet: "Ortaklarımız - SSC FSMVU",
+  RulesHelmet: "Kurallar - SSC FSMVU",
+  AdminPanelHelmet: "Yönetici Paneli - SSC FSMVU",
+  LoginHelmet: "Giriş - SSC FSMVU",
+  YearOfProduction: "© SSC FSMVU - 2025"
+}
+
+
+},
+
   ar: {
     translation: {
       caroselHeader: " تجمع الطلبة السوريين",

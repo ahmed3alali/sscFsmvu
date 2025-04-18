@@ -140,7 +140,7 @@ const Partners = () => {
             {t("wantToBePartner")}
             </p>
             <Button className="rounded-full px-8 py-6 text-base">
-              <a href="mailto:example@example.com">
+              <a href="mailto:sscfsmvu@gmail.com">
               {t("ContactUs")}
 
               </a>
